@@ -7,8 +7,7 @@
 #include "gestor.h"
 #pragma warning(disable : 4996) //strcopy_s
 
-// Inserção de um novo registo
-// Inserção realizada no início da lista ligada
+// inserção realizada no início da lista ligada
 MeioTransporte* inserirMeio(MeioTransporte* inicio, int codigo, char tipo[], float bateria, float autonomia, char geocodigo[], int isAlugado) {
 	if (!existeMeio(inicio, codigo)) {
 		MeioTransporte *novoMeio = malloc(sizeof(struct structRegisto));
@@ -22,7 +21,7 @@ MeioTransporte* inserirMeio(MeioTransporte* inicio, int codigo, char tipo[], flo
 			novoMeio->seguinte = inicio;
 			return novoMeio;
 		}
-	} else printf("malloc failed to allocate memory!");
+	} else printf("malloc não conseguiu alocar memória!");
 	return inicio;
 }
 
@@ -35,7 +34,7 @@ void listarMeios(MeioTransporte* inicio) {
 }
 
 
-// Determinar existência do 'codigo' na lista ligada 'inicio'
+// determina se o meio existe
 // devolve 1 se existir ou 0 caso contrário
 int existeMeio(MeioTransporte* inicio, int cod) {
 	while (inicio != NULL) {
@@ -62,11 +61,9 @@ Meio* removerMeio(Meio* inicio, int cod) // Remover um meio a partir do seu cód
 }
 */
 
-// Remover um meio a partir do seu código{
+// remover um meio a partir do seu código
 MeioTransporte* removerMeio(MeioTransporte* inicio, int cod) {
-
 	MeioTransporte *anterior = inicio, *atual = inicio, *auxiliar;
-
 	if (atual == NULL) {
 		return NULL; // lista ligada vazia
 	} else if (atual->codigo == cod) { // remoção do 1º registo
