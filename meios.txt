@@ -1,0 +1,2 @@
+456 cybertruck 23000,000000 23000,000000 trees.earth.asss 0
+123 Tesla_Model_S 50000,000000 40000,000000 trees.earth.test 1
